@@ -28,7 +28,7 @@ float LAX = 0, LAY = 0, LAZ = 0;
 void changeSize(int w, int h)
 {
 	// Prevent a divide by zero, when window is too short
-	// (you can’t make a window with zero width).
+	// (you canï¿½t make a window with zero width).
 	if (h == 0)
 		h = 1;
 	// compute window's aspect ratio
@@ -178,82 +178,6 @@ void renderScene(void)
 		}
 	}
 
-/*
-	int slices = 50;
-	float angle_alpha = 6.28 / slices;
-	float angle_beta = 3.14 / slices;
-	int radius = 15;
-	int radius2 = 27;
-	
-	for (int i = 0; i < slices; i++) {
-		float beta = -(3.14 / 2) + i * angle_beta;
-		float y1 = sin(beta + angle_beta);
-		float y2 = sin(beta);
-		float pi = 0;
-		for (int j = 0; j < slices; j++) {
-			pi += angle_alpha;
-			float alpha = j * angle_alpha;
-			float x1 = cos(beta + angle_beta) * sin(alpha);
-			float x2 = cos(beta) * sin(alpha);
-			float x3 = cos(beta) * sin(alpha + angle_alpha);
-			float x4 = cos(beta + angle_beta) * sin(alpha + angle_alpha);
-			float z1 = cos(beta + angle_beta) * cos(alpha);
-			float z2 = cos(beta) * cos(alpha);
-			float z3 = cos(beta) * cos(alpha + angle_alpha);
-			float z4 = cos(beta + angle_beta) * cos(alpha + angle_alpha);
-	
-			GLuint* bufferI = (GLuint*) malloc(sizeof(GLuint));
-			printf("%d\n", glGenBuffers(1, bufferI));
-			int n_verticesI = 18;
-			float verticesI[18] = { radius * x1 - 2 * sin(alpha) - 5 * sin(pi), radius * y1 - 2 * cos(alpha) - 5 * sin(pi), radius * z1,
-			radius * x2 - 2 * sin(alpha) - 5 * sin(pi), radius * y2 - 2 * cos(alpha) - 5 * sin(pi), radius * z2,
-			radius * x3 - 2 * sin(alpha) - 5 * sin(pi), radius * y2 - 2 * cos(alpha) - 5 * sin(pi), radius * z3,
-			radius * x1 - 2 * sin(alpha) - 5 * sin(pi), radius * y1 - 2 * cos(alpha) - 5 * sin(pi), radius * z1,
-			radius * x3 - 2 * sin(alpha) - 5 * sin(pi), radius * y2 - 2 * cos(alpha) - 5 * sin(pi), radius * z3,
-			radius * x4 - 2 * sin(alpha) - 5 * sin(pi), radius * y1 - 2 * cos(alpha) - 5 * sin(pi), radius * z4 };
-			glGenBuffers(1, bufferI);
-			glBindBuffer(GL_ARRAY_BUFFER, bufferI[0]);
-			glBufferData(GL_ARRAY_BUFFER, sizeof(float) * n_verticesI, verticesI, GL_STATIC_DRAW);
-			glPushMatrix();
-			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-			glBindBuffer(GL_ARRAY_BUFFER, bufferI[0]);
-			glVertexPointer(3, GL_FLOAT, 0, 0);
-			glDrawArrays(GL_TRIANGLES, 0, n_verticesI);
-			glPopMatrix();
-
-			sin_it++;
-			if (sin_it >= 100000) {
-				sin_it = 0;
-				rand_sin = ((float)rand()) / (float)RAND_MAX;
-			}
-	
-			if (!(j % 2) && sin(j * i) <= rand_sin) {
-				int time = glutGet(GLUT_ELAPSED_TIME);
-				int n_verticesO = 18;
-				float verticesO[18] = { radius2 * x1, radius2 * y1, radius2 * z1,
-					radius2 * x2, radius2 * y2, radius2 * z2,
-					radius2 * x3, radius2 * y2, radius2 * z3,
-					radius2 * x1, radius2 * y1, radius2 * z1,
-					radius2 * x3, radius2 * y2, radius2 * z3,
-					radius2 * x4, radius2 * y1, radius2 * z4 };
-				GLuint bufferO[1];
-				glGenBuffers(1, bufferO);
-				glBindBuffer(GL_ARRAY_BUFFER, bufferO[0]);
-				glBufferData(GL_ARRAY_BUFFER, sizeof(float) * n_verticesO, verticesO, GL_STATIC_DRAW);
-				glPushMatrix();
-				glRotatef(time * 0.01f, 1, 1, 0);
-				glColor4f(1.0f, 0.0f, 0.0f, 0.5f);
-				glBindBuffer(GL_ARRAY_BUFFER, bufferO[0]);
-				glVertexPointer(3, GL_FLOAT, 0, 0);
-				glDrawArrays(GL_TRIANGLES, 0, n_verticesO);
-				glPopMatrix();
-			}
-		}
-	}
-*/
-
-
-
 	// End of frame
 	glutSwapBuffers();
 }
@@ -390,7 +314,7 @@ int main(int argc, char** argv)
 	glutMouseFunc(mouse);
 	glutMotionFunc(motion_mouse);
 
-	//menu com as opções de desenho
+	//menu com as opï¿½ï¿½es de desenho
 	glutCreateMenu(menu);
 	glutAddMenuEntry("Dotted", 1);
 	glutAddMenuEntry("Lines", 2);
